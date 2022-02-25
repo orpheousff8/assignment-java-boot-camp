@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 @Table(name = "product")
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "product_name", nullable = false, length = 200)
     private String name;
@@ -35,12 +35,10 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    public Integer getId() {
-        return id;
-    }
+    public Product(){}
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public String getName() {

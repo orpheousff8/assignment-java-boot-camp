@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 @Table(name = "payment")
 public class Payment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "payment_method", length = 45)
     private String method;
@@ -28,12 +28,8 @@ public class Payment {
     @Column(name = "payment_status", length = 45)
     private String status;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getMethod() {

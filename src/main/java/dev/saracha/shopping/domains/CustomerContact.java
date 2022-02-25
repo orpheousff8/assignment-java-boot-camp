@@ -1,11 +1,7 @@
 package dev.saracha.shopping.domains;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.Embeddable;
 import javax.persistence.Column;
-import java.time.LocalDateTime;
 
 @Embeddable
 public class CustomerContact {
@@ -41,14 +37,6 @@ public class CustomerContact {
 
     @Column(name = "zip_code", nullable = false, length = 10)
     private String zipCode;
-
-    @Column(name = "customer_contact_created_date")
-    @CreationTimestamp
-    private LocalDateTime createdDate;
-
-    @Column(name = "customer_contact_updated_date")
-    @UpdateTimestamp
-    private LocalDateTime updatedDate;
 
     public String getEmail() {
         return email;
@@ -138,19 +126,4 @@ public class CustomerContact {
         this.zipCode = zipCode;
     }
 
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public LocalDateTime getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDateTime updatedDate) {
-        this.updatedDate = updatedDate;
-    }
 }

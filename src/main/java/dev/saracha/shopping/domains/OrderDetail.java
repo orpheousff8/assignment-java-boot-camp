@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @Table(name = "order_detail")
 public class OrderDetail {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_detail_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "order_id", nullable = false)
@@ -23,7 +23,7 @@ public class OrderDetail {
     private Product product;
 
     @Column(name = "oder_quantity")
-    private Integer oderQuantity;
+    private Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
@@ -37,12 +37,8 @@ public class OrderDetail {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Order getOrder() {
@@ -61,19 +57,19 @@ public class OrderDetail {
         this.product = product;
     }
 
-    public Integer getOderQuantity() {
-        return oderQuantity;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setOderQuantity(Integer oderQuantity) {
-        this.oderQuantity = oderQuantity;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public Cart getShoppingCart() {
+    public Cart getCart() {
         return cart;
     }
 
-    public void setShoppingCart(Cart cart) {
+    public void setCart(Cart cart) {
         this.cart = cart;
     }
 
@@ -93,16 +89,16 @@ public class OrderDetail {
         this.updatedDate = updatedDate;
     }
 
-//    @Override
-//    public String toString() {
-//        return "OrderDetail{" +
-//                "id=" + id +
-//                ", order=" + order +
-//                ", product=" + product +
-//                ", oderQuantity=" + oderQuantity +
-//                ", createdDate=" + createdDate +
-//                ", updatedDate=" + updatedDate +
-//                ", shoppingCart=" + cart +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "id=" + id +
+                ", order=" + order +
+                ", product=" + product +
+                ", oderQuantity=" + quantity +
+                ", createdDate=" + createdDate +
+                ", updatedDate=" + updatedDate +
+                ", shoppingCart=" + cart +
+                '}';
+    }
 }

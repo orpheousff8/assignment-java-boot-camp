@@ -11,8 +11,9 @@ import java.time.LocalDateTime;
 @Table(name = "cart")
 public class Cart {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "cart_order_quantity")
     private Integer orderQuantity;
@@ -29,7 +30,8 @@ public class Cart {
     private Customer customer;
 
     @Column(name = "cart_status")
-    private String cartStatus;
+    @Enumerated(EnumType.STRING)
+    private CartStatus status;
 
     @Column(name = "cart_created_date")
     @CreationTimestamp
@@ -39,12 +41,8 @@ public class Cart {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getOrderQuantity() {
@@ -79,12 +77,12 @@ public class Cart {
         this.customer = customer;
     }
 
-    public String getCartStatus() {
-        return cartStatus;
+    public CartStatus getStatus() {
+        return status;
     }
 
-    public void setCartStatus(String cartStatus) {
-        this.cartStatus = cartStatus;
+    public void setStatus(CartStatus status) {
+        this.status = status;
     }
 
     public LocalDateTime getCreatedDate() {

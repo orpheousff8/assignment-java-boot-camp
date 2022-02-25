@@ -10,15 +10,15 @@ import java.time.LocalDateTime;
 @Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_Id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "customer_name", nullable = false, length = 30)
-    private String customerName;
+    private String name;
 
     @Embedded
-    private CustomerContact customerContact;
+    private CustomerContact contact;
 
     @Column(name = "customer_created_date")
     @CreationTimestamp
@@ -28,28 +28,26 @@ public class Customer {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    public int getId() {
+    public Customer() {}
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public CustomerContact getContact() {
+        return contact;
     }
 
-    public CustomerContact getCustomerContact() {
-        return customerContact;
-    }
-
-    public void setCustomerContact(CustomerContact customerContact) {
-        this.customerContact = customerContact;
+    public void setContact(CustomerContact contact) {
+        this.contact = contact;
     }
 
     public LocalDateTime getCreatedDate() {
