@@ -18,7 +18,7 @@ public class Product {
     @Column(name = "product_name", nullable = false, length = 200)
     private String name;
 
-    @Column(name = "product_price", nullable = false, precision = 10)
+    @Column(name = "product_price", precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
     @Column(name = "product_quantity", nullable = false)
@@ -35,7 +35,8 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    public Product(){}
+    public Product() {
+    }
 
     public Long getId() {
         return id;

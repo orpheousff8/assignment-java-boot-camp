@@ -18,7 +18,7 @@ public class Cart {
     @Column(name = "cart_order_quantity")
     private Integer orderQuantity;
 
-    @Column(name = "cart_total_cost", precision = 10)
+    @Column(name = "cart_total_cost", precision = 10, scale = 2, nullable = false)
     private BigDecimal totalCost;
 
     @ManyToOne(optional = false)

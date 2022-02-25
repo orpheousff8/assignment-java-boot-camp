@@ -12,10 +12,11 @@ public class Payment {
     @Column(name = "payment_id", nullable = false)
     private Long id;
 
-    @Column(name = "payment_method", length = 45)
-    private String method;
+    @Column(name = "payment_method", length = 20)
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod method;
 
-    @Column(name = "payment_amount", precision = 10)
+    @Column(name = "payment_amount", precision = 10, scale = 2, nullable = false)
     private BigDecimal amount;
 
     @Column(name = "payment_date")
@@ -25,19 +26,20 @@ public class Payment {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @Column(name = "payment_status", length = 45)
-    private String status;
+    @Column(name = "payment_status", length = 20)
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus status;
 
     public Long getId() {
         return id;
     }
 
-    public String getMethod() {
+    public PaymentMethod getMethod() {
         return method;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setMethod(PaymentMethod paymentMethod) {
+        this.method = paymentMethod;
     }
 
     public BigDecimal getAmount() {
@@ -64,11 +66,11 @@ public class Payment {
         this.order = order;
     }
 
-    public String getStatus() {
+    public PaymentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(PaymentStatus status) {
         this.status = status;
     }
 }
