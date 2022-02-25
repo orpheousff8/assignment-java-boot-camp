@@ -11,8 +11,8 @@ import java.util.List;
 public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> {
     @Query(
             value = "SELECT * FROM order_detail od " +
-                    "INNER JOIN customer_order co " +
-                    "ON od.order_id = co.order_id " +
+                    "INNER JOIN customer_order o " +
+                    "ON od.order_id = o.order_id " +
                     "WHERE od.order_id = ?",
             nativeQuery = true
     )

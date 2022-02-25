@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query(
-            value = "SELECT SUM(c.total_cost) FROM cart c " +
-                    "INNER JOIN order_detail od ON c.cart_id = od.card_id " +
-                    "INNER JOIN customer_order co ON od.order_id = co.order_id" +
-                    "WHERE co.order_id = ? AND c.cart_status = 'FILLED'",
+            value = "SELECT Cast(Sum(c.cart_total_cost) AS DECIMAL(10, 2)) FROM cart c " +
+                    "INNER JOIN order_detail od ON c.cart_id = od.cart_id " +
+                    "INNER JOIN customer_order o ON od.order_id = o.order_id " +
+                    "WHERE o.order_id = ? AND c.cart_status = 'FILLED'",
             nativeQuery = true
     )
     BigDecimal calculateTotalAmountOrderByOrderId(Long orderId);
