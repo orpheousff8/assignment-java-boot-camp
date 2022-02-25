@@ -1,10 +1,9 @@
 package dev.saracha.shopping.repositories;
 
-import dev.saracha.shopping.domains.Customer;
+import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.Product;
 import jdk.jfr.Description;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -23,11 +22,21 @@ class ProductRepositoryTest {
     private final Product product = TestHelper.getProduct();
 
     @Description("Skip some tests related to findById because IDs are auto generated ordered by test running sequence, which we don't know.")
+    @Disabled
+    @Test
+    public void getProductById_is_present_success() {
+        // Arrange
+        productRepository.save(product);
+        // Act
+        Optional<Product> result = productRepository.getProductById(1L);
+        // Assert
+        assertFalse(result.isPresent());
+    }
 
     @Test
     public void getProductById_is_present_failure() {
         // Act
-        Optional<Product> result = productRepository.getProductById(1L);
+        Optional<Product> result = productRepository.getProductById(999L);
         // Assert
         assertFalse(result.isPresent());
     }

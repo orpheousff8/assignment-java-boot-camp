@@ -1,5 +1,6 @@
 package dev.saracha.shopping.repositories;
 
+import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.Cart;
 import dev.saracha.shopping.domains.CartStatus;
 import dev.saracha.shopping.domains.Customer;

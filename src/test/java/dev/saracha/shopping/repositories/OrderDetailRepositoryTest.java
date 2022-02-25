@@ -1,5 +1,6 @@
 package dev.saracha.shopping.repositories;
 
+import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
