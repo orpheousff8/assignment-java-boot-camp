@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order,Integer> {
+public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query(
             value = "SELECT SUM(c.total_cost) FROM cart c " +
                     "INNER JOIN order_detail od ON c.cart_id = od.card_id " +
@@ -16,5 +17,7 @@ public interface OrderRepository extends JpaRepository<Order,Integer> {
                     "WHERE co.order_id = ? AND c.cart_status = 'FILLED'",
             nativeQuery = true
     )
-    BigDecimal calculateTotalAmountOrderByOrderId(Integer orderId);
+    BigDecimal calculateTotalAmountOrderByOrderId(Long orderId);
+
+    Optional<Order> getOrderById(Long id);
 }

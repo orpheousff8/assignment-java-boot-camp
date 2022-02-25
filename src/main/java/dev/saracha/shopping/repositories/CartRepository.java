@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CartRepository extends JpaRepository<Cart,Integer> {
+public interface CartRepository extends JpaRepository<Cart, Long> {
     @Query(
             value = "SELECT * from cart c " +
                     "INNER JOIN customer cus ON c.customer_id = cus.customer_id " +
-                    "WHERE c.customer_id = ? AND c.cart_status = 'EMPTY'",
+                    "WHERE c.customer_id = ? AND c.cart_status = 'FILLED'",
             nativeQuery = true
     )
-    List<Cart> findShoppingCartDataByCustomerId(Integer customerId);
+    List<Cart> getShoppingCartsByCustomerId(Long customerId);
 }
