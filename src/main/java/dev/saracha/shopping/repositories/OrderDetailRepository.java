@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface OrderDetailRepository extends JpaRepository<OrderDetail, Integer> {
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> {
     @Query(
             value = "SELECT * FROM order_detail od " +
                     "INNER JOIN customer_order co " +
@@ -16,5 +16,5 @@ public interface OrderDetailRepository extends JpaRepository<OrderDetail, Intege
                     "WHERE od.order_id = ?",
             nativeQuery = true
     )
-    List<OrderDetail> findOrderDetailByOrderId(Integer orderId);
+    List<OrderDetail> getOrderDetailByOrderId(Long orderId);
 }
