@@ -45,7 +45,7 @@ class CartRepositoryTest {
         cartRepository.save(cart);
 
         // Act
-        List<Cart> result = cartRepository.getShoppingCartListByCustomerId(1L);
+        List<Cart> result = cartRepository.getShoppingCartListByCustomerId(3L);
 
         //Arrange
         assertFalse(result.isEmpty());

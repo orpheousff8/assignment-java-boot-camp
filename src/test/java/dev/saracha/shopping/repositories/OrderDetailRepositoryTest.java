@@ -56,7 +56,7 @@ class OrderDetailRepositoryTest {
         orderDetailRepository.save(orderDetail);
 
         // Act
-        List<OrderDetail> result = orderDetailRepository.getOrderDetailListByOrderId(1L);
+        List<OrderDetail> result = orderDetailRepository.getOrderDetailListByOrderId(2L);
 
         // Assert
         assertFalse(result.isEmpty());
