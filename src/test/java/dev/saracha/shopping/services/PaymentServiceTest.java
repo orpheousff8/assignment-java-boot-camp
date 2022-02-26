@@ -4,6 +4,7 @@ import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.*;
 import dev.saracha.shopping.repositories.*;
 import dtos.PaymentRequestDTO;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
+@Description("This Class may need to run separately from other tests")
 class PaymentServiceTest {
     @InjectMocks
     private PaymentService paymentService;

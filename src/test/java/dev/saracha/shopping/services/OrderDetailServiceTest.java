@@ -68,7 +68,7 @@ class OrderDetailServiceTest {
         orderDetailService.setOrderDetailRepository(orderDetailRepository);
 
         // Act
-        List<OrderDetail> result = orderDetailService.getOrderDetailListByOrderId(1L);
+        List<OrderDetail> result = orderDetailService.getOrderDetailListByOrderId(3L);
 
         // Assert
         assertFalse(result.isEmpty());

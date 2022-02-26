@@ -83,7 +83,7 @@ class CartServiceTest {
         cartService.setOrderDetailRepository(orderDetailRepository);
 
         ProductToCartDTO productToCartDTO = new ProductToCartDTO();
-        productToCartDTO.setId(1L);
+        productToCartDTO.setId(6L);
         productToCartDTO.setQuantity(2);
 
         List<ProductToCartDTO> productToCartDTOList = Collections.singletonList(productToCartDTO);
@@ -150,7 +150,7 @@ class CartServiceTest {
         List<Long> cartIdList = Arrays.asList(1L, 2L);
 
         // Act
-        List<OrderDetail> result = cartService.checkoutProduct(cartIdList, 1L);
+        List<OrderDetail> result = cartService.checkoutProduct(cartIdList, 2L);
 
         // Assert
         assertEquals(2, result.size());
@@ -163,12 +163,13 @@ class CartServiceTest {
         assertEquals(0, BigDecimal.valueOf(9999.99d).compareTo(result.get(0).getCart().getTotalCost()));
         assertEquals(CartStatus.FILLED, result.get(0).getCart().getStatus());
 
+
         assertEquals(customer.getName(), result.get(1).getOrder().getCustomer().getName());
         assertEquals(OrderStatus.PENDING, result.get(1).getOrder().getStatus());
         assertEquals(product.getName(), result.get(1).getProduct().getName());
         assertEquals(2L, result.get(1).getCart().getId());
-        assertEquals(10, result.get(1).getCart().getOrderQuantity());
-        assertEquals(0, BigDecimal.valueOf(99999.90d).compareTo(result.get(1).getCart().getTotalCost()));
+        assertEquals(1, result.get(1).getCart().getOrderQuantity());
+        assertEquals(0, BigDecimal.valueOf(9999.99d).compareTo(result.get(1).getCart().getTotalCost()));
         assertEquals(CartStatus.FILLED, result.get(1).getCart().getStatus());
     }
 }
