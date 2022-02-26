@@ -34,6 +34,7 @@ public class Payment {
         return id;
     }
 
+    @Enumerated(EnumType.STRING)
     public PaymentMethod getMethod() {
         return method;
     }
