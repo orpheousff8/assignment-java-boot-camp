@@ -15,5 +15,5 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
                     "WHERE c.customer_id = ? AND c.cart_status = 'FILLED'",
             nativeQuery = true
     )
-    List<Cart> getShoppingCartsByCustomerId(Long customerId);
+    List<Cart> getShoppingCartListByCustomerId(Long customerId);
 }

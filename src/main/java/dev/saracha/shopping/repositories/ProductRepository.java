@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Optional<Product> getProductById(Long productId);
 
-    List<Product> findByNameContainingIgnoreCase(String productName);
+    List<Product> getProductListByNameContainingIgnoreCase(String productName);
 }
