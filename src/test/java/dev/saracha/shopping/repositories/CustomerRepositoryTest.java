@@ -42,7 +42,7 @@ class CustomerRepositoryTest {
     }
 
     @Test
-    void findByName_is_present_success() {
+    void getCustomerByName_is_present_success() {
         // Arrange
         customerRepository.save(customer);
         // Act
@@ -52,7 +52,7 @@ class CustomerRepositoryTest {
     }
 
     @Test
-    void findByName_is_present_failure() {
+    void getCustomerByName_is_present_failure() {
         // Arrange
         customerRepository.save(customer);
         // Act

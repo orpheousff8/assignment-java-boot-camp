@@ -40,11 +40,12 @@ class CartRepositoryTest {
         cart.setCustomer(customer);
         cart.setProduct(product);
         cart.setOrderQuantity(1);
+        cart.setTotalCost(product.getPrice());
         cart.setStatus(CartStatus.FILLED);
         cartRepository.save(cart);
 
         // Act
-        List<Cart> result = cartRepository.getShoppingCartsByCustomerId(1L);
+        List<Cart> result = cartRepository.getShoppingCartListByCustomerId(1L);
 
         //Arrange
         assertFalse(result.isEmpty());
@@ -53,7 +54,7 @@ class CartRepositoryTest {
     @Test
     void findShoppingCartDataByCustomerId_is_not_empty_failure() {
         // Act
-        List<Cart> result = cartRepository.getShoppingCartsByCustomerId(1L);
+        List<Cart> result = cartRepository.getShoppingCartListByCustomerId(1L);
 
         //Arrange
         assertTrue(result.isEmpty());

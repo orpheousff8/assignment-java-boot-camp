@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -21,6 +22,7 @@ class PaymentRepositoryTest {
     public void getPaymentById_is_present_success() {
         // Arrange
         Payment payment = new Payment();
+        payment.setAmount(BigDecimal.valueOf(9999.99d));
         paymentRepository.save(payment);
         // Act
         Optional<Payment> result = paymentRepository.getPaymentById(1L);

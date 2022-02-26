@@ -32,7 +32,7 @@ class OrderDetailRepositoryTest {
     private final Product product = TestHelper.getProduct();
 
     @Test
-    void getOrderDetailByOrderId_is_not_empty_with_success() {
+    void getOrderDetailListByOrderId_is_not_empty_with_success() {
         // Arrange
         customerRepository.save(customer);
         productRepository.save(product);
@@ -42,6 +42,7 @@ class OrderDetailRepositoryTest {
         cart.setCustomer(customer);
         cart.setProduct(product);
         cart.setOrderQuantity(1);
+        cart.setTotalCost(product.getPrice());
         cart.setStatus(CartStatus.FILLED);
         cartRepository.save(cart);
 
@@ -55,16 +56,16 @@ class OrderDetailRepositoryTest {
         orderDetailRepository.save(orderDetail);
 
         // Act
-        List<OrderDetail> result = orderDetailRepository.getOrderDetailByOrderId(1L);
+        List<OrderDetail> result = orderDetailRepository.getOrderDetailListByOrderId(1L);
 
         // Assert
         assertFalse(result.isEmpty());
     }
 
     @Test
-    void getOrderDetailByOrderId_is_not_empty_with_failure() {
+    void getOrderDetailListByOrderId_is_not_empty_with_failure() {
         // Act
-        List<OrderDetail> result = orderDetailRepository.getOrderDetailByOrderId(1L);
+        List<OrderDetail> result = orderDetailRepository.getOrderDetailListByOrderId(1L);
 
         // Assert
         assertTrue(result.isEmpty());

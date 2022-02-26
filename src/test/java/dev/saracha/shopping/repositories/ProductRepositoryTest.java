@@ -42,21 +42,21 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void findByNameContainingIgnoreCase_is_not_empty_with_success() {
+    void getProductListByNameContainingIgnoreCase_is_not_empty_with_success() {
         // Arrange
         productRepository.save(product);
         // Act
-        List<Product> result = productRepository.findByNameContainingIgnoreCase("test-product");
+        List<Product> result = productRepository.getProductListByNameContainingIgnoreCase("test-product");
         // Assert
         assertFalse(result.isEmpty());
     }
 
     @Test
-    void findByNameContainingIgnoreCase_is_not_empty_with_failure() {
+    void getProductListByNameContainingIgnoreCase_is_not_empty_with_failure() {
         // Arrange
         productRepository.save(product);
         // Act
-        List<Product> result = productRepository.findByNameContainingIgnoreCase("not-exists-product");
+        List<Product> result = productRepository.getProductListByNameContainingIgnoreCase("not-exists-product");
         // Assert
         assertTrue(result.isEmpty());
     }

@@ -1,4 +1,4 @@
-package dev.saracha.shopping.repositories;
+package dev.saracha.shopping;
 
 import dev.saracha.shopping.domains.*;
 
@@ -34,9 +34,24 @@ public class TestHelper {
 
         // id is automatically set
         product.setName("test-product-01");
-        product.setPrice(new BigDecimal(9999.99));
+        product.setPrice(BigDecimal.valueOf(9999.99d));
         product.setQuantity(99);
 
         return product;
+    }
+
+    public static Shipping getShipping() {
+        Shipping shipping = new Shipping();
+
+        shipping.setName("test name");
+        shipping.setTelephoneNo("089-999-9999");
+        shipping.setEmail("testEmail@test.com");
+        shipping.setHouseNo("999/999");
+        shipping.setSubDistrict("test-sub-district");
+        shipping.setDistrict("test-district");
+        shipping.setProvince("test-province");
+        shipping.setZipCode("99999");
+
+        return shipping;
     }
 }
