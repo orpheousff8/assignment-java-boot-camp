@@ -1,14 +1,8 @@
 package dev.saracha.shopping;
 
-import dev.saracha.shopping.controllers.ShippingController;
 import dev.saracha.shopping.domains.*;
-import dev.saracha.shopping.repositories.CartRepository;
 import dev.saracha.shopping.repositories.CustomerRepository;
 import dev.saracha.shopping.repositories.ProductRepository;
-import dev.saracha.shopping.repositories.ShippingRepository;
-import dev.saracha.shopping.services.CartService;
-import dev.saracha.shopping.services.ShippingService;
-import dtos.ProductToCartDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +14,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootApplication
