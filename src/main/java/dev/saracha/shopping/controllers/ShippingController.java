@@ -2,7 +2,7 @@ package dev.saracha.shopping.controllers;
 
 import dev.saracha.shopping.domains.Shipping;
 import dev.saracha.shopping.services.ShippingService;
-import dtos.ShippingRequestDTO;
+import dev.saracha.shopping.dtos.ShippingRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

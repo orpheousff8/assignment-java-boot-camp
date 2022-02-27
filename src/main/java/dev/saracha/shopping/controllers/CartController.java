@@ -3,7 +3,7 @@ package dev.saracha.shopping.controllers;
 import dev.saracha.shopping.domains.Cart;
 import dev.saracha.shopping.domains.OrderDetail;
 import dev.saracha.shopping.services.CartService;
-import dtos.ProductToCartDTO;
+import dev.saracha.shopping.dtos.ProductToCartDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
