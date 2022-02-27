@@ -1,4 +1,4 @@
-package dtos;
+package dev.saracha.shopping.dtos;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package dtos;
+package dev.saracha.shopping.dtos;
 
 import dev.saracha.shopping.domains.Shipping;
 
