@@ -4,7 +4,7 @@ import dev.saracha.shopping.domains.*;
 import dev.saracha.shopping.repositories.CartRepository;
 import dev.saracha.shopping.repositories.OrderDetailRepository;
 import dev.saracha.shopping.repositories.OrderRepository;
-import dtos.ProductToCartDTO;
+import dev.saracha.shopping.dtos.ProductToCartDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

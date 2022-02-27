@@ -2,7 +2,7 @@ package dev.saracha.shopping.services;
 
 import dev.saracha.shopping.domains.*;
 import dev.saracha.shopping.repositories.ShippingRepository;
-import dtos.ShippingRequestDTO;
+import dev.saracha.shopping.dtos.ShippingRequestDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
