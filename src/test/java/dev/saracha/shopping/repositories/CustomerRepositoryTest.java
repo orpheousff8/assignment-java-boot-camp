@@ -2,8 +2,7 @@ package dev.saracha.shopping.repositories;
 
 import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.Customer;
-import jdk.jfr.Description;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -19,18 +18,19 @@ class CustomerRepositoryTest {
     @Autowired
     private CustomerRepository customerRepository;
 
-    private final Customer customer = TestHelper.getCustomer();
+    // Arrange
+    @BeforeEach
+    private void testInit() {
+        final Customer customer = TestHelper.getCustomer();
+        customerRepository.save(customer);
+    }
 
-    @Description("Skip success test case because id is auto generated, which we cannot fix it")
-    @Disabled
     @Test
     public void getCustomerById_is_present_success() {
-        // Arrange
-        customerRepository.save(customer);
         // Act
-        Optional<Customer> result = customerRepository.getCustomerById(1L);
+        Optional<Customer> result = customerRepository.getCustomerById(2L);
         // Assert
-        assertFalse(result.isPresent());
+        assertTrue(result.isPresent());
     }
 
     @Test
@@ -43,8 +43,6 @@ class CustomerRepositoryTest {
 
     @Test
     void getCustomerByName_is_present_success() {
-        // Arrange
-        customerRepository.save(customer);
         // Act
         Optional<Customer> result = customerRepository.getCustomerByName("test name");
         // Assert
@@ -53,8 +51,6 @@ class CustomerRepositoryTest {
 
     @Test
     void getCustomerByName_is_present_failure() {
-        // Arrange
-        customerRepository.save(customer);
         // Act
         Optional<Customer> result = customerRepository.getCustomerByName("not-exist name");
         // Assert
