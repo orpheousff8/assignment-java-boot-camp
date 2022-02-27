@@ -9,7 +9,7 @@ import dev.saracha.shopping.repositories.CustomerRepository;
 import dev.saracha.shopping.repositories.ProductRepository;
 import dev.saracha.shopping.services.CustomerService;
 import dev.saracha.shopping.services.ProductService;
-import dtos.ProductToCartDTO;
+import dev.saracha.shopping.dtos.ProductToCartDTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

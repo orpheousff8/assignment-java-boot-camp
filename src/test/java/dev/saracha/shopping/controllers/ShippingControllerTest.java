@@ -9,15 +9,13 @@ import dev.saracha.shopping.services.CustomerService;
 import dev.saracha.shopping.services.OrderService;
 import dev.saracha.shopping.services.ProductService;
 import dev.saracha.shopping.services.ShippingService;
-import dtos.ShippingRequestDTO;
+import dev.saracha.shopping.dtos.ShippingRequestDTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
