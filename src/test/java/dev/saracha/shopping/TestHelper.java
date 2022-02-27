@@ -3,6 +3,7 @@ package dev.saracha.shopping;
 import dev.saracha.shopping.domains.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class TestHelper {
     public static Customer getCustomer() {
@@ -53,5 +54,17 @@ public class TestHelper {
         shipping.setZipCode("99999");
 
         return shipping;
+    }
+
+    public static Class<List<Product>> getObjectTypeOfProduct() {
+        return (Class<List<Product>>) ((Class)List.class);
+    }
+
+    public static Class<List<Cart>> getObjectTypeOfCartList() {
+        return (Class<List<Cart>>) ((Class)List.class);
+    }
+
+    public static Class<List<OrderDetail>> getObjectTypeOfOrderDetailList() {
+        return (Class<List<OrderDetail>>) ((Class)List.class);
     }
 }
