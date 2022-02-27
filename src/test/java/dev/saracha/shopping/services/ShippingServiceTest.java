@@ -3,16 +3,13 @@ package dev.saracha.shopping.services;
 import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.*;
 import dev.saracha.shopping.repositories.*;
-import dtos.ShippingRequestDTO;
+import dev.saracha.shopping.dtos.ShippingRequestDTO;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class ShippingServiceTest {

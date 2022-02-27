@@ -3,7 +3,7 @@ package dev.saracha.shopping.services;
 import dev.saracha.shopping.TestHelper;
 import dev.saracha.shopping.domains.*;
 import dev.saracha.shopping.repositories.*;
-import dtos.ProductToCartDTO;
+import dev.saracha.shopping.dtos.ProductToCartDTO;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -127,8 +127,8 @@ class CartServiceTest {
         // id is automatically set
         cart2.setCustomer(customer);
         cart2.setProduct(product);
-        cart2.setOrderQuantity(10);
-        cart2.setTotalCost(BigDecimal.valueOf(99999.90d));
+        cart2.setOrderQuantity(1);
+        cart2.setTotalCost(BigDecimal.valueOf(9999.99d));
         cart2.setStatus(CartStatus.FILLED);
         cartRepository.save(cart2);
 
