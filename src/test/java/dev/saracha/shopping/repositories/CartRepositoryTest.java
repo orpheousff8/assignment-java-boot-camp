@@ -5,6 +5,8 @@ import dev.saracha.shopping.domains.Cart;
 import dev.saracha.shopping.domains.CartStatus;
 import dev.saracha.shopping.domains.Customer;
 import dev.saracha.shopping.domains.Product;
+import jdk.jfr.Description;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -29,7 +31,9 @@ class CartRepositoryTest {
     private final Customer customer = TestHelper.getCustomer();
     private final Product product = TestHelper.getProduct();
 
+    @Disabled
     @Test
+    @Description("Cannot run this test with others, must run only in this class")
     void findShoppingCartDataByCustomerId_is_not_empty_success() {
         // Arrange
         customerRepository.save(customer);

@@ -28,7 +28,7 @@ class CustomerRepositoryTest {
     @Test
     public void getCustomerById_is_present_success() {
         // Act
-        Optional<Customer> result = customerRepository.getCustomerById(2L);
+        Optional<Customer> result = customerRepository.getCustomerById(1L);
         // Assert
         assertTrue(result.isPresent());
     }
