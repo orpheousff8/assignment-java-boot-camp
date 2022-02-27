@@ -1,3 +1,6 @@
+## Assignments for Java Boot Camp
+* [Week 1 :: Design and Develop RESTful API with Spring Boot](https://github.com/up1/assignment-java-boot-camp/wiki/Week-01)
+
 # User Flow
 ### 1. ค้นหาสินค้าจากชื่อ
 ผู้ใช้งานค้นหาเกมจากชื่อ resident evil ได้ผลลัพธ์ ประกอบไปด้วยชื่อเกม, รูปภาพปกเกม, ราคา 5 รายการ ดังนี้
@@ -55,12 +58,21 @@
 - แสดงผลยอดรวม
 - แสดงผลวัน เวลาที่คาดว่าจะจัดส่ง
 
+## คำสั่งต่าง ๆ
 
+clean และ run โปรเจ็ค
 
-## Assignments for Java Boot Camp
-* [Week 1 :: Design and Develop RESTful API with Spring Boot](https://github.com/up1/assignment-java-boot-camp/wiki/Week-01)
+`mvn clean install`
 
+run เทส
 
+`mvn test`
+
+run โปรเจ็ค
+
+`mvn spring-boot:run`
+
+---
 
 ## Resources
 * [Spring Boot Reference](https://spring.io/projects/spring-boot)
